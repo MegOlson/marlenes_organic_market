@@ -4,15 +4,56 @@
 </div>
 
 <% content_for(:navbar) do %>
-  <li><%= link_to "Add Product", new_product_path %></li>
+  <li id="index-nav"><%= link_to "Add Product", new_product_path %></li>
 <% end %>
 
-<% if @products.any? %>
-  <ul>
-    <% @products.each do |product| %>
-      <li> <%= link_to product.name, product_path(product) %> </li>
+<div class="row">
+  <div class="col-md-5">
+    <% if @products.any? %>
+    <div class="well">
+      <ul>
+        <h2>All Products</h2>
+        <hr>
+        <% @products.each do |product| %>
+          <li class="products"> <%= link_to product.name, product_path(product) %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <% else %>
+      <p>There are no product logged.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no product logged.</p>
-<% end %>
+  </div>
+  <div class="col-md-7">
+    <div class="well">
+      <h3>Most Recently Added Products</h3>
+      <hr>
+      <% if @recent_products.any? %>
+        <ul>
+          <% @recent_products.each do |product| %>
+          <li>
+            <h4><%= product.name %></h4>
+            <p>$<%= product.cost %>.00</p>
+            <p><%= product.country %></p>
+          </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>There are no recently added products.</p>
+      <% end %>
+      <h3>American Products</h3>
+      <hr>
+      <% if @american_products.any? %>
+      <ul>
+        <% @american_products.each do |product| %>
+        <li> <%= product.name %> </li>
+        <% end %>
+      </ul>
+      <% else %>
+        <p>There are no American products logged.</p>
+      <% end %>
+      <h3>Most Reviewed Product</h3>
+      <hr>
+      <h4><%= @products.most_reviews %></h4>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
 
 .heading-index {
   text-align: center;
@@ -7,4 +8,67 @@
 
 ul {
   list-style: none;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.54);
+  height: 100px;
+}
+
+.navbar li {
+  margin-top: 20%;
+}
+
+#index-nav {
+  margin-top: 50%;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.navbar-header {
+  margin-top: 5%;
+  font-size: 20px;
+}
+
+body {
+  background-image: url('background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+.well {
+  background-color: rgba(255, 255, 255, 0.54);
+  border: none;
+}
+
+.product-header, #product-admin {
+  text-align: center;
+}
+
+a {
+  color: #575e68;
+}
+
+hr {
+  border-top: solid 1px grey;
+}
+
+.products li {
+  color: black;
+}
+
+form {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.btn {
+  background-color: white;
+  color: grey;
 }
