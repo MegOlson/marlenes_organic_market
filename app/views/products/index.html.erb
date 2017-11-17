@@ -1,1 +1,18 @@
-<h1>Marlene's Organic Market</h1>
+<div class="heading-index">
+  <h2>Welcome to</h2>
+  <h1>Marlene's Organic Market</h1>
+</div>
+
+<% content_for(:navbar) do %>
+  <li><%= link_to "Add Product", new_product_path %></li>
+<% end %>
+
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li> <%= link_to product.name, product_path(product) %> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no product logged.</p>
+<% end %>

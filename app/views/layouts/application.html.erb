@@ -9,6 +9,18 @@
   </head>
 
   <body>
+
+    <nav class="navbar">
+      <div class="container-fluid">
+        <!-- <div class="navbar-header">
+          <a href="/">Fan Site</a>
+        </div> -->
+        <ul class="nav navbar-nav navbar-right">
+          <li> <%= yield(:navbar) %> </li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="container">
 
       <% if flash[:notice] != nil %>
