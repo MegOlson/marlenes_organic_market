@@ -28,7 +28,7 @@
         </span>
 
         <h3><%= review.author%></h3>
-        <h3> <%= review.rating %> </h3>
+        <% review.rating.times{%> <span class="glyphicon glyphicon-star" aria-hidden="true"></span><%}%>
         <hr>
         <blockquote class="blockquote">
           <p>"<%= review.content %>"</p>
