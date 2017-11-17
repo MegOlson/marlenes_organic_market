@@ -21,14 +21,16 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
   end
 
   def update
+    @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     if @review.update(review_params)
       flash[:notice] = "Your review has been updated!"
-      redirect_to product_reviews_path
+      redirect_to product_path(@product)
     else
       render :edit
     end

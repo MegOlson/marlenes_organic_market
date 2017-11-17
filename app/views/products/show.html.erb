@@ -1,5 +1,6 @@
 <% content_for(:navbar) do %>
   <li><%= link_to "Add Review", new_product_review_path(@product) %></li>
+  <li> <%= link_to "All Products", products_path %> </li>
   <li><a href="#" id="admin">Admin</a></li>
 <% end %>
 
