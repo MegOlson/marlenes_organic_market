@@ -5,8 +5,9 @@ class Product < ActiveRecord::Base
   scope :american_products, -> { where("country = ?", ("USA"))}
   scope :most_reviews, -> {(
     select("products.id, products.name, products.cost, products.country, count(reviews.id) as reviews_count")
-    .joins(:products)
-    .group("reviews.id")
-    .limit(1)
-    )}
+    .joins(:reviews)
+    .group("products.id")
+    .order("reviews_count DESC")
+    .first
+  )}
 end
